@@ -203,8 +203,75 @@
 # # # Output: [(1, 15), (3, 20), (4, 12), (6, 18)]
 
 # Create a dictionary where keys are the names from one list and values are the corresponding ages from another list, but only for names that have lengths greater than 4.
-names = ['Alice', 'Bob', 'Charlie', 'David'] 
-ages = [25, 30, 35, 40]
+# names = ['Alice', 'Bob', 'Charlie', 'David'] 
+# ages = [25, 30, 35, 40]
 
-new_dictionary = {name: ages[index] for index, name in enumerate(names) if len(name) > 4}
-print(new_dictionary)
+# new_dictionary = {name: ages[index] for index, name in enumerate(names) if len(name) > 4}
+# print(new_dictionary)
+
+# Create a function calculate_total_salary that takes in the base salary and additional bonuses (as keyword arguments) for an employee. The function should consider
+# a default bonus of 0 if none is provided. Use *args for handling multiple additional bonuses.
+
+# Test cases
+# print(calculate_total_salary(50000))  # Test with only base salary
+# print(calculate_total_salary(50000, 2000, 3000))  # Test with base salary and additional bonuses
+# print(calculate_total_salary(50000, 2000, 3000, health_insurance=1000, travel_allowance=1500))  # Test with kwargs
+
+# def calculate_total_salary(base_salay: int, *args, **kwargs) -> int:
+#     bonuses = 0
+#     if args != None:
+#         for arg in args:
+#             bonuses += arg
+#     if kwargs != None:
+#         for kwarg in kwargs:
+#             bonuses += kwargs[kwarg]
+#     net_salary = base_salay + bonuses
+#     return net_salary
+
+# print(calculate_total_salary(50000))
+# print(calculate_total_salary(50000, 2000, 3000))
+# print(calculate_total_salary(50000, 2000, 3000, health_insurance=1000, travel_allowance=1500))
+
+
+
+
+
+
+
+# Create a function generate_shopping_list that accepts a title for the list, defaulting to "My Shopping List," and any number of items using *args.
+#  The function should return a formatted shopping list with the title and items.
+
+# def generate_shopping_list(*args, title: str = "My Shopping List:", **kwargs) -> str:
+#     list_of_products = [title]
+#     for arg in args:
+#         list_of_products.append(arg)
+#     return list_of_products
+   
+# print(generate_shopping_list("milk", "bread", "eggs"))
+
+# def domain_name(url):
+#     replaces = ["http://", "www.", "https://"]
+#     for replace_one in replaces:
+#         url= url.replace(replace_one, "")
+#     url = url.split(".")
+#     return url[0]
+
+# def domain_name(url):
+#     return url.split("//")[-1].split("www.")[-1].split(".")[0]
+
+# print(domain_name("http://github.com/carbonfive/raygun"))
+
+def make_readable(seconds: int) -> str:
+    hours = seconds // 3600
+    if hours < 10:
+        hours = "0" + str(hours)
+    minutes = seconds % 3600 // 60
+    if minutes < 10:
+        minutes = "0" + str(minutes)
+    seconds_format = seconds % 60
+    if seconds_format < 10:
+        seconds_format = "0" + str(seconds_format)
+    return f"{hours}:{minutes}:{seconds_format}"
+
+print(make_readable(35956))
+

@@ -261,17 +261,123 @@
 
 # print(domain_name("http://github.com/carbonfive/raygun"))
 
-def make_readable(seconds: int) -> str:
-    hours = seconds // 3600
-    if hours < 10:
-        hours = "0" + str(hours)
-    minutes = seconds % 3600 // 60
-    if minutes < 10:
-        minutes = "0" + str(minutes)
-    seconds_format = seconds % 60
-    if seconds_format < 10:
-        seconds_format = "0" + str(seconds_format)
-    return f"{hours}:{minutes}:{seconds_format}"
+# def make_readable(seconds: int) -> str:
+#     hours = seconds // 3600
+#     if hours < 10:
+#         hours = "0" + str(hours)
+#     minutes = seconds % 3600 // 60
+#     if minutes < 10:
+#         minutes = "0" + str(minutes)
+#     seconds_format = seconds % 60
+#     if seconds_format < 10:
+#         seconds_format = "0" + str(seconds_format)
+#     return f"{hours}:{minutes}:{seconds_format}"
 
-print(make_readable(35956))
+# print(make_readable(35956))
 
+# Create class that woud repesent weather. This class takes several parameters (wind speed (km/hour) and temperature(F))
+# This class should be able to return weather conditions:
+# 1) Weather temperature in K , C , F 
+# 2) Wind speed in m/s , km/k , miles/h
+# 3) Weather conditions : good (wind speed < 5m/s,  temp > 0C < 25 C) ,nommal (wind speed < 10m/s,  temp > -15C < 28 C), bad (wind speed > 10m/s,  temp < -15C or > 30 C) , savere (wind speed > 15m/s,  temp < -25C or > 40 C)
+
+# Use inheritance, private/protected methods/attributes if needed.
+
+
+# import logging
+# logging.basicConfig(level=logging.ERROR, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', datefmt='%d/%m/%Y %H:%M:%S')
+
+
+# class Weather:
+
+#     def __init__(self, wind_speed_kmph: float, temperature_fahr: float) -> None:
+#         self.wind_speed_kmph: float = wind_speed_kmph
+#         self.temperature_fahr: float = temperature_fahr
+
+#     def get_temperature_in_kelvin(self) -> float:
+#         k_temperature: float = 5 * (self.temperature_fahr - 32)/9 + 273.15
+#         return round(k_temperature, 2)
+
+#     def get_temperature_in_celcius(self) -> float:
+#         c_temperature: float = 5 / 9 * (self.temperature_fahr - 32)
+#         return round(c_temperature, 2)
+
+#     def get_temperature_in_fahrenheit(self) -> float:
+#         return self.temperature_fahr
+    
+#     def get_wind_speed_mps(self) -> float:
+#         mps_speed: float = (self.wind_speed_kmph * 1000)/3600
+#         return round(mps_speed, 2)
+    
+#     def get_wind_speed_kmph(self) -> float:
+#         return self.wind_speed_kmph
+
+#     def get_wind_speed_milesph(self) -> float:
+#         milesph: float = 0.6214 * self.wind_speed_kmph
+#         return round(milesph, 2)
+
+#     def weather_conditions(self) -> str:
+#         if self.get_wind_speed_mps() < 5.0 and 0.0 < self.get_temperature_in_celcius() < 25.0:
+#             return f"Weather conditions are good"
+#         elif self.get_wind_speed_mps() < 10.0 and -15.0 < self.get_temperature_in_celcius() < 28.0:
+#             return f"Weather conditions are normal"
+#         elif self.get_wind_speed_mps() > 10.0 and ((-25.0 < self.get_temperature_in_celcius() < -15.0) or (40.0 > self.get_temperature_in_celcius() > 30.0)):
+#             return f"Weather conditions are bad"
+#         elif self.get_wind_speed_mps() > 15.0 and (-25.0 > self.get_temperature_in_celcius() or self.get_temperature_in_celcius() > 40.0):
+#             return f"Weather conditions are severe"
+
+
+
+# measures_one = Weather(120, 150)
+
+
+# print(measures_one.get_temperature_in_kelvin())
+# print(measures_one.get_temperature_in_celcius())
+# print(measures_one.get_wind_speed_mps())
+# print(measures_one.get_wind_speed_milesph())
+# print(measures_one.weather_conditions())
+
+
+# Basic Banking System Challenge
+
+#  Define a class called Account with the following attributes and methods:
+#  - Attributes: account_number, account_holder, balance
+#  - Methods: display_account_info() - prints information about the account
+
+#  Create two subclasses, SavingsAccount and CheckingAccount, that inherit from Account.
+#  Each subclass should have its own unique method, for example, earn_interest() for SavingsAccount
+#  and deduct_fees() for CheckingAccount.
+
+class Account:
+    def __init__(self, account_number: str, account_holder: str, balance: float) -> None:
+        self.account_number: int = account_number
+        self.account_holder: str = account_holder
+        self.balance: float = balance
+
+    def display_account_info(self) -> str:
+        return f"Account {self.account_number} belongs to {self.account_holder} and has a balance of {self.balance}"
+
+class SavingAccount(Account):
+    def __init__(self, interest_percent: float, account_number: str, account_holder: str, balance: float) -> None:
+        super().__init__(account_number, account_holder, balance)
+        self.interest_percent = interest_percent
+
+    def earn_interests(self) -> float:
+        return f"With interest rate {self.interest_percent} and a balance {self.balance} you will earn {round(self.balance * self.interest_percent, 2)} each year."
+
+class CheckingAccount(Account):
+    def __init__(self, fee: float, account_number: str, account_holder: str, balance: float) -> None:
+        super().__init__(account_number, account_holder, balance)
+        self.fee: float = fee
+
+    def deduct_fees(self) -> float:
+        return f"{self.fee} will be deducted from your account each month and with balance {self.balance} it will be {self.balance * self.fee}."
+    
+
+jonas_account = SavingAccount(0.1, "LT10232465400", "Jonas Jogailaitis", 45687.08)
+inga_account = CheckingAccount(0.01, "LT780215465465", "Inga Sninga", 12.0)
+
+print(jonas_account.display_account_info())
+print(inga_account.display_account_info())
+print(jonas_account.earn_interests())
+print(inga_account.deduct_fees())

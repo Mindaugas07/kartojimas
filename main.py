@@ -348,36 +348,141 @@
 #  Each subclass should have its own unique method, for example, earn_interest() for SavingsAccount
 #  and deduct_fees() for CheckingAccount.
 
-class Account:
-    def __init__(self, account_number: str, account_holder: str, balance: float) -> None:
-        self.account_number: int = account_number
-        self.account_holder: str = account_holder
-        self.balance: float = balance
+# class Account:
+#     def __init__(self, account_number: str, account_holder: str, balance: float) -> None:
+#         self.account_number: int = account_number
+#         self.account_holder: str = account_holder
+#         self.balance: float = balance
 
-    def display_account_info(self) -> str:
-        return f"Account {self.account_number} belongs to {self.account_holder} and has a balance of {self.balance}"
+#     def display_account_info(self) -> str:
+#         return f"Account {self.account_number} belongs to {self.account_holder} and has a balance of {self.balance}"
 
-class SavingAccount(Account):
-    def __init__(self, interest_percent: float, account_number: str, account_holder: str, balance: float) -> None:
-        super().__init__(account_number, account_holder, balance)
-        self.interest_percent = interest_percent
+# class SavingAccount(Account):
+#     def __init__(self, interest_percent: float, account_number: str, account_holder: str, balance: float) -> None:
+#         super().__init__(account_number, account_holder, balance)
+#         self.interest_percent = interest_percent
 
-    def earn_interests(self) -> float:
-        return f"With interest rate {self.interest_percent} and a balance {self.balance} you will earn {round(self.balance * self.interest_percent, 2)} each year."
+#     def earn_interests(self) -> float:
+#         return f"With interest rate {self.interest_percent} and a balance {self.balance} you will earn {round(self.balance * self.interest_percent, 2)} each year."
 
-class CheckingAccount(Account):
-    def __init__(self, fee: float, account_number: str, account_holder: str, balance: float) -> None:
-        super().__init__(account_number, account_holder, balance)
-        self.fee: float = fee
+# class CheckingAccount(Account):
+#     def __init__(self, fee: float, account_number: str, account_holder: str, balance: float) -> None:
+#         super().__init__(account_number, account_holder, balance)
+#         self.fee: float = fee
 
-    def deduct_fees(self) -> float:
-        return f"{self.fee} will be deducted from your account each month and with balance {self.balance} it will be {self.balance * self.fee}."
+#     def deduct_fees(self) -> float:
+#         return f"{self.fee} will be deducted from your account each month and with balance {self.balance} it will be {self.balance * self.fee}."
     
 
-jonas_account = SavingAccount(0.1, "LT10232465400", "Jonas Jogailaitis", 45687.08)
-inga_account = CheckingAccount(0.01, "LT780215465465", "Inga Sninga", 12.0)
+# jonas_account = SavingAccount(0.1, "LT10232465400", "Jonas Jogailaitis", 45687.08)
+# inga_account = CheckingAccount(0.01, "LT780215465465", "Inga Sninga", 12.0)
 
-print(jonas_account.display_account_info())
-print(inga_account.display_account_info())
-print(jonas_account.earn_interests())
-print(inga_account.deduct_fees())
+# print(jonas_account.display_account_info())
+# print(inga_account.display_account_info())
+# print(jonas_account.earn_interests())
+# print(inga_account.deduct_fees())
+
+# import subprocess
+
+# lis = [5, 6, 7, 8, 9]
+# i = 0
+
+# print(lis[i])
+
+# while True:
+#     user_input = input()
+#     if user_input == ">":
+#         i += 1
+#         try:
+#             print(lis[i])
+            
+#         except IndexError as err:
+#             i = len(lis) - 1
+#             print(f"End of the list: {lis[i]}")
+            
+#     elif user_input == "<":
+#         i -= 1
+#         try:
+#             if i > -1:
+#                 print(lis[i])
+#             else:
+#                 i += 1  
+#                 print (f"End of the list: {lis[i]}")
+                          
+#         except IndexError as err:
+#             print(f"End of the list: {lis[i]}")
+#     elif user_input == "q":
+#         break
+
+# Write a function that takes a list of integers and returns their average. Raise a TypeError if the input is not
+# a list or if any element in the list is not an integer. Provide a solution that addresses this error.
+
+# from typing import List
+
+# list_of_integers: List[int] = [45, 12, [9, 7], 46]
+
+# def average_from_list(list: List[int]) -> float:
+#     try:
+#         return sum(list) / len(list)
+#     except TypeError as err:
+#         print("Input is not a list or element in the list is not an integer")
+#         # print(err)
+
+# average_from_list(list_of_integers)
+
+# Create a function that reads a file and returns its contents. Raise a FileNotFoundError if
+# the file does not exist. Provide a solution that handles this error.
+
+# def read_from_file(file_name: str):
+#     if type(file_name) != str:
+#         raise TypeError
+#     with open(file_name) as f:
+#         contents = f.read()
+#         print(contents)
+
+
+# try: 
+#     read_from_file(5)
+# except FileNotFoundError as err:
+#     print("File does not exist!")
+# except TypeError:
+#     print("Not string was provided!")
+
+# numbers = [5, 47, 6, 485, 1, 521, 8, 184, 1, 7, 5, 52, 562]
+# numbers_not = [5, 47, 6, 485, 1, "a", 8, 184, 1, 7, 5, 52, 562]
+# numbers_not_again = "5, 47, 6, 485, 1, 521, 8, 184, 1, 7, 5, 52, 562"
+# def calculate_average(numb: list) -> float:
+#     if type(numb) is not list or not numb:
+#         raise TypeError("Not a list or is empty list")
+#     numb_check = [x for x in numb if type(x) == int]
+#     # print(numb_check)
+#     if numb_check != numb:
+#         raise TypeError("Not all items of the list are integers")
+#     return round((sum(numb) / len(numb)), 2)
+# def try_calculate_averages(*args: list) -> list:
+#     averages = []
+#     for arg in args:
+#         try:
+#             averages.append(calculate_average(arg))
+#         except TypeError as e:
+#             if str(e) == "Not a list or is empty list":
+#                 print("Not a list or is empty list")
+#             elif str(e) == "Not all items of the list are integers":
+#                 print("Not all items of the list are integers")
+#                 try:
+#                     fixed_list = [int(x) for x in arg]
+#                     averages.append(calculate_average(fixed_list))
+#                 except ValueError:
+#                     print("Unable to quickfix your problem!")
+#         except Exception as e:
+#             print(f"Unexpected problem {e}")
+#     return averages
+# print(try_calculate_averages(numbers, numbers_not, numbers_not_again))
+
+def is_leap_year(year):
+    if (year % 4 == 0 and year % 100 != 0) or year % 400 == 0:
+        return True
+    else:
+        return False
+    
+

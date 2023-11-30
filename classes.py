@@ -121,29 +121,30 @@
 # action to `buy` or `return` to main categories selection.
 # P.S Create instances of ElectronicProduct and ClothingProduct, add them to the ShoppingCart, and display the cart.
 
-class Product:
+# class Product:
     
-    def __init__(self, name: str, price: int) -> None:
-        self.name: str = name
-        self.price: int = price
+#     def __init__(self, name: str, price: int) -> None:
+#         self.name: str = name
+#         self.price: int = price
 
-    def display_info(self) -> str:
-        return f"Product: {self.name} costs {self.price} $"
+#     def display_info(self) -> str:
+#         return f"Product: {self.name} costs {self.price} $"
     
 
-class ElectronicProduct(Product):
+# class ElectronicProduct(Product):
 
-    def __init__(self, name: str, price: int, brand: str) -> None:
-        super().__init__(name, price)
-        self.brand: str = brand
-
-
-class ClothingProduct(Product):
-
-    def __init__(self, name: str, price: int, size: int) -> None:
-        super().__init__(name, price)
-        self.size = size
+#     def __init__(self, name: str, price: int, brand: str) -> None:
+#         super().__init__(name, price)
+#         self.brand: str = brand
 
 
-class ShoppingCart():
-    pass
+# class ClothingProduct(Product):
+
+#     def __init__(self, name: str, price: int, size: int) -> None:
+#         super().__init__(name, price)
+#         self.size = size
+
+
+# class ShoppingCart():
+#     pass
+

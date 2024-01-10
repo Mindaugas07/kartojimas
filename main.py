@@ -1,6 +1,6 @@
 # from typing import Dict, List
- 
- 
+
+
 # person = {
 #     "name": "Vytautas",
 #     "surname": "Sluckas",
@@ -9,7 +9,7 @@
 #     "address": {"Street": "some street", "House Number": "some house number"},
 #     "languages": ["Lithuanian", "English", "Norwegian"]
 # }
- 
+
 # person1 = {
 #     "name": "Tomas",
 #     "surname": "BLABLABA",
@@ -18,9 +18,8 @@
 #     "address": {"Street": "some street", "House Number": "some house number"},
 #     "languages": ["Latvian", "English", "Swedish"]
 # }
- 
+
 # people = [person, person1]
- 
 
 
 # def get_most_popular_language(people: List[Dict]) -> str:
@@ -46,7 +45,7 @@
 #             max_key, max_value = key, value
 #     return max_key
 
-   
+
 #     # return max(languages_dictionary, key=languages_dictionary.get)
 
 # print(get_most_popular_language(people))
@@ -68,7 +67,6 @@
 #     #   do not overwrite values from the first dictionary, only add new values from the second one.
 
 
-
 # print(custom_dictionary_update(dict_one, dict_two, False))
 
 # person = {
@@ -79,7 +77,7 @@
 #     "address": {"Street": "some street", "House Number": "some house number"},
 #     "languages": ["Lithuanian", "English", "Norwegian"],
 # }
- 
+
 # person1 = {
 #     "name": "Tomas",
 #     "surname": "BLABLABA",
@@ -88,7 +86,7 @@
 #     "address": {"Street": "some street", "House Number": "some house number"},
 #     "languages": ["Latvian", "English", "Swedish"],
 # }
- 
+
 # person2 = {
 #     "name": "Tom",
 #     "surname": "Edison",
@@ -97,8 +95,8 @@
 #     "address": {"Street": "some street", "House Number": "some house number"},
 #     "languages": ["Latvian", "English", "Swedish"],
 # }
- 
- 
+
+
 # Function with Return Value
 # Create a function called calculate_area that takes in the length and width of a rectangle and returns its area.
 
@@ -146,9 +144,9 @@
 #        return n
 #     else:
 #        return n*factorial(n-1)
-    
+
 # n = 6
-    
+
 # if n < 0:
 #    print("Sorry, factorial does not exist for negative numbers")
 # elif n == 0:
@@ -163,7 +161,7 @@
 #     # for number in arr:
 #     #     # from_array_to_dict[number] = from_array_to_dict.get(number, 0) + 1
 #     #     from_array_to_dict[number] = arr.count(number)
-    
+
 #     max_value = None
 #     for key, value in from_array_to_dict.items():
 #         if max_value == None or max_value < value:
@@ -197,13 +195,13 @@
 
 # Generate a list of tuples where each tuple contains the index and the value of the element from the original list, but exclude elements with a value less than 10.
 # original_list = [5, 15, 8, 20, 12, 7, 18]
- 
+
 # list_of_tuples = [(index, value) for index, value in enumerate(original_list) if value > 10]
 # print(list_of_tuples)
 # # # Output: [(1, 15), (3, 20), (4, 12), (6, 18)]
 
 # Create a dictionary where keys are the names from one list and values are the corresponding ages from another list, but only for names that have lengths greater than 4.
-# names = ['Alice', 'Bob', 'Charlie', 'David'] 
+# names = ['Alice', 'Bob', 'Charlie', 'David']
 # ages = [25, 30, 35, 40]
 
 # new_dictionary = {name: ages[index] for index, name in enumerate(names) if len(name) > 4}
@@ -233,11 +231,6 @@
 # print(calculate_total_salary(50000, 2000, 3000, health_insurance=1000, travel_allowance=1500))
 
 
-
-
-
-
-
 # Create a function generate_shopping_list that accepts a title for the list, defaulting to "My Shopping List," and any number of items using *args.
 #  The function should return a formatted shopping list with the title and items.
 
@@ -246,7 +239,7 @@
 #     for arg in args:
 #         list_of_products.append(arg)
 #     return list_of_products
-   
+
 # print(generate_shopping_list("milk", "bread", "eggs"))
 
 # def domain_name(url):
@@ -277,7 +270,7 @@
 
 # Create class that woud repesent weather. This class takes several parameters (wind speed (km/hour) and temperature(F))
 # This class should be able to return weather conditions:
-# 1) Weather temperature in K , C , F 
+# 1) Weather temperature in K , C , F
 # 2) Wind speed in m/s , km/k , miles/h
 # 3) Weather conditions : good (wind speed < 5m/s,  temp > 0C < 25 C) ,nommal (wind speed < 10m/s,  temp > -15C < 28 C), bad (wind speed > 10m/s,  temp < -15C or > 30 C) , savere (wind speed > 15m/s,  temp < -25C or > 40 C)
 
@@ -304,11 +297,11 @@
 
 #     def get_temperature_in_fahrenheit(self) -> float:
 #         return self.temperature_fahr
-    
+
 #     def get_wind_speed_mps(self) -> float:
 #         mps_speed: float = (self.wind_speed_kmph * 1000)/3600
 #         return round(mps_speed, 2)
-    
+
 #     def get_wind_speed_kmph(self) -> float:
 #         return self.wind_speed_kmph
 
@@ -325,7 +318,6 @@
 #             return f"Weather conditions are bad"
 #         elif self.get_wind_speed_mps() > 15.0 and (-25.0 > self.get_temperature_in_celcius() or self.get_temperature_in_celcius() > 40.0):
 #             return f"Weather conditions are severe"
-
 
 
 # measures_one = Weather(120, 150)
@@ -372,7 +364,7 @@
 
 #     def deduct_fees(self) -> float:
 #         return f"{self.fee} will be deducted from your account each month and with balance {self.balance} it will be {self.balance * self.fee}."
-    
+
 
 # jonas_account = SavingAccount(0.1, "LT10232465400", "Jonas Jogailaitis", 45687.08)
 # inga_account = CheckingAccount(0.01, "LT780215465465", "Inga Sninga", 12.0)
@@ -395,20 +387,20 @@
 #         i += 1
 #         try:
 #             print(lis[i])
-            
+
 #         except IndexError as err:
 #             i = len(lis) - 1
 #             print(f"End of the list: {lis[i]}")
-            
+
 #     elif user_input == "<":
 #         i -= 1
 #         try:
 #             if i > -1:
 #                 print(lis[i])
 #             else:
-#                 i += 1  
+#                 i += 1
 #                 print (f"End of the list: {lis[i]}")
-                          
+
 #         except IndexError as err:
 #             print(f"End of the list: {lis[i]}")
 #     elif user_input == "q":
@@ -441,7 +433,7 @@
 #         print(contents)
 
 
-# try: 
+# try:
 #     read_from_file(5)
 # except FileNotFoundError as err:
 #     print("File does not exist!")
@@ -479,10 +471,217 @@
 #     return averages
 # print(try_calculate_averages(numbers, numbers_not, numbers_not_again))
 
-def is_leap_year(year):
-    if (year % 4 == 0 and year % 100 != 0) or year % 400 == 0:
-        return True
-    else:
-        return False
-    
+# def is_leap_year(year):
+#     if (year % 4 == 0 and year % 100 != 0) or year % 400 == 0:
+#         return True
+#     else:
+#         return False
 
+
+# def validate(n):
+#     z = 2
+#     list_of_numbers = [int(number) for number in str(n)]
+#     if len(list_of_numbers) % 2 != 0:
+#         for i, x in enumerate(list_of_numbers):
+#             if i % z != 0:
+#                 x = x * 2
+#                 if x > 9:
+#                     x = x - 9
+#                     list_of_numbers[i] = x
+#                 else:
+#                     list_of_numbers[i] = x
+
+#     else:
+#         for i, x in enumerate(list_of_numbers):
+#             if i % z == 0:
+#                 x = x * 2
+#                 if x > 9:
+#                     x = x - 9
+#                     list_of_numbers[i] = x
+#                 else:
+#                     list_of_numbers[i] = x
+
+#     sum_of_all_numbers = sum(list_of_numbers)
+#     return sum_of_all_numbers % 10 == 0
+
+
+# print(validate(1212))
+
+
+# 2 užduotis
+# Parašyti programą, kuri:
+
+# Atspausdintų dabartinę datą ir laiką
+# Atimtų iš dabartinės datos ir laiko 5 dienas ir juos atspausdintų
+# Pridėti prie dabartinės datos ir laiko 8 valandas ir juos atspausdintų
+# Atspausdintų dabartinę datą ir laiką tokiu formatu: 2019 03 08, 09:57:17
+# Patarimas: naudoti datetime, timedelta (from datetime import timedelta)
+
+# https://www.w3schools.com/python/python_datetime.asp
+
+# import datetime
+
+
+# def dates():
+#     x = datetime.datetime.now()
+#     print(f"Dabartine data ir laikas yra: {x}")
+#     now_minus_five_days = x - datetime.timedelta(days=5)
+#     print(f"Dabartis minus 5 dienos yra: {now_minus_five_days}")
+#     now_plus_8_hours = x + datetime.timedelta(hours=8)
+#     print(f"Dabartis plius 8 valandos yra: {now_plus_8_hours}")
+#     print(x.strftime("%Y %m %d, %H:%M:%S"))
+
+
+# dates()
+
+# 3 užduotis
+# Parašyti programą, kuri:
+
+# Leistų vartotojui įvesti norimą datą ir laiką (pvz. gimtadienį)
+# Paskaičiuotų ir atspausdintų, kiek nuo įvestos datos ir laiko praėjo:
+# Metų
+# Mėnesių
+# Dienų
+# Valandų
+# Minučių
+# Sekundžių
+# Kadangi tiksliai galima paskaičiuoti tik dienas ir sekundes, metus, mėnesius ir t.t. paskaičiuokite apytiksliai.
+
+# ivesta_data = input("Įveskite norima datą: ")
+# data = datetime.datetime.strptime(ivesta_data, "%Y-%m-%d")
+# print(data)
+# print(datetime.datetime.now() - data)
+# print(data + datetime.timedelta(hours=5))
+# print(data + datetime.timedelta(days=20, hours=8))
+
+
+# def greater_than_100(x):
+#     return x > 100
+
+
+# print(list(filter(lambda x: x > 100, [1, 111, 2, 222, 3, 333])))
+# # [111, 222, 333]
+
+
+# list(range(10))
+
+
+# # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+# def is_even(x):
+#     return x % 2 == 0
+
+
+# print(list(filter(is_even, range(10))))
+# # [0, 2, 4, 6, 8]
+
+# print(list(filter(lambda x: x % 2 == 0, range(10))))
+# # [0, 2, 4, 6, 8]
+
+# original_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+# print(list(filter(lambda x: x % 2 == 0, original_list)))
+# print(list(filter(lambda x: x % 2 != 0, original_list)))
+
+# original_list = [19, 65, 57, 39, 152, 639, 121, 44, 90, 190]
+# print(list(filter(lambda x: x % 19 == 0 or x % 13 == 0, original_list)))
+
+# original_list = [1, 2, 3, 5, 7, 8, 9, 10]
+# print(
+#     f"Number of even numbers in the above array: {len(list(filter(lambda x: x % 2 == 0, original_list)))}"
+# )
+# print(
+#     f"Number of odd numbers in the above array: {len(list(filter(lambda x: x % 2 != 0, original_list)))}"
+# )
+
+# from functools import reduce
+
+
+# original_list = ["V", "a", "l", "i", "o"]
+
+
+# def cont(x, y):
+#     return x + y
+
+
+# print(reduce(cont, original_list))
+
+# original_list_x = [1, 2, 3, 5, 7, 8, 9, 10]
+
+# print(reduce(max, original_list_x))
+
+# def multiply(x, y):
+#     return x * y
+
+# print(reduce(multiply, original_list))
+
+
+# Task nr.1:
+# Write a Python function that takes a list of integers as input,
+# and returns a new list containing only the prime numbers in the original list, squared.
+
+# from typing import List
+
+# original_list = [1, 2, 3, 5, 7, 8, 9, 10]
+
+# def is_prime(number: int) -> bool:
+#     if number > 1:
+#         for n in range(2, number):
+#             if (number % n) == 0:
+#                 return False
+#         return True
+
+# def squared(member: int) -> int:
+#     return member**2
+
+# list_primes = list(filter(is_prime, original_list))
+# iterator = map(squared, list_primes)
+# print(list(iterator))
+
+
+# Task nr.2
+#
+# Create a function called `filter_and_map_books` that takes a list of such dictionaries as input and performs the following operations:
+#  - Select books that were published after the year 2000.
+#  - Ttransform the selected books into a new list containing tuples with the format `(Title, Author)`.
+#  - The function should return the list of tuples with the titles and authors of the books published after the year 2000.
+
+from typing import List
+
+book_list = [
+    {"title": "Heloween", "author": "Dracula", "published_year": 1985, "rating": 4.6},
+    {"title": "Rembo", "author": "Stalone jr", "published_year": 1990, "rating": 7.6},
+    {
+        "title": "Star Peace",
+        "author": "Vytautas",
+        "published_year": 2013,
+        "rating": 6.0,
+    },
+    {"title": "Nemunas", "author": "Salomeja", "published_year": 2022, "rating": 1.6},
+    {
+        "title": "Poteris",
+        "author": "Autorius K.",
+        "published_year": 2000,
+        "rating": 8.6,
+    },
+]
+
+
+def filter_and_map_books(book_dict_list: List[dict]) -> List[tuple]:
+    list_books = list(filter(lambda s: s["published_year"] > 2000, book_dict_list))
+    tuple_books = list(map(lambda x: (x["title"], x["author"]), list_books))
+    return tuple_books
+
+
+print(filter_and_map_books(book_list))
+
+
+# Example:
+# {
+#     'title': 'Book Title',
+#     'author': 'Author Name',
+#     'published_year': 20XX,
+#     'rating': X.X
+# }
+
+
+# P.S minimum 5 different titles
